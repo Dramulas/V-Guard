@@ -65,7 +65,11 @@ class _MapsDetialScreenState extends State<MapsDetailScreen> {
                 vertical: 10,
               ),
               child: widget.map.displayIcon != null
-                  ? Container(
+                  ? InteractiveViewer(
+                      panEnabled: false, // Set it to false to prevent panning.
+                      boundaryMargin: EdgeInsets.all(80),
+                      minScale: 0.5,
+                      maxScale: 4,
                       child: ExtendedImage.network(
                         widget.map.displayIcon!,
                         key: UniqueKey(),
